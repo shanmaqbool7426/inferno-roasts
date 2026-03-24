@@ -1,0 +1,198 @@
+/**
+ * Custom animations for Inferno Roasts
+ * Heat waves, smoke effects, and other branded animations
+ */
+
+@keyframes heat-wave {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px) scaleY(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes smoke-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes flame-flicker {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.05) translateY(-2px);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(0.98) translateY(1px);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.02) translateY(-1px);
+    opacity: 0.97;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 69, 0, 0.6);
+  }
+}
+
+@keyframes toxic-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(57, 255, 20, 0.6);
+  }
+}
+
+@keyframes slide-in-bottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Utility classes */
+.animate-heat-wave {
+  animation: heat-wave 3s ease-in-out infinite;
+}
+
+.animate-smoke-rise {
+  animation: smoke-rise 4s ease-out infinite;
+}
+
+.animate-flame-flicker {
+  animation: flame-flicker 2s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-toxic-glow {
+  animation: toxic-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-bottom {
+  animation: slide-in-bottom 0.4s ease-out;
+}
+
+.animate-fade-scale-in {
+  animation: fade-scale-in 0.3s ease-out;
+}
+
+/* Backdrop blur support check */
+@supports (backdrop-filter: blur(20px)) {
+  .glass-effect {
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(17, 17, 17, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 69, 0, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 69, 0, 0.7);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(255, 69, 0, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(255, 69, 0, 0.3);
+  color: #ffffff;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
